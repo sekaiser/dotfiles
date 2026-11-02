@@ -1,6 +1,7 @@
-# Private image-build policy, deliberately outside the Nixi release.
+# Consumer VM-image compatibility policy, not a Nixi-wide dependency override.
 {
-  # Opt-in only: security = import ./nixi/overlays/security.nix;
+  # The LKL image helper needs more memory for these VM images. This changes
+  # only that helper; the global security dependency overrides are not selected.
   lkl-image = final: prev:
     prev.lib.optionalAttrs prev.stdenv.hostPlatform.isLinux {
       lkl = prev.lkl.overrideAttrs (old: {

@@ -13,6 +13,11 @@ configuration input is required by these recipes. The UTM example has no supplie
 login password or trusted user CA and does not enable passwordless activation.
 Provision your own access policy before trying to use the image.
 
+The public base does not grant the account administrative groups, Docker-group
+membership or Nix daemon trust. Grant those explicitly in your own private
+deployment if needed; daemon trust is an administrative privilege, not a
+prerequisite for ordinary Nix usage.
+
 ## Evaluate and build
 
 ```sh

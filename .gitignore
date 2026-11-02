@@ -15,6 +15,13 @@
 /GOALS.md
 /Notes.md
 /root_pwd.txt
+/.env
+/.env.*
+/private-secrets/
+/secrets/
+*.pem
+*.key
+.DS_Store
 target/
 *.qcow2
 *.img
@@ -22,11 +29,3 @@ target/
 *.zwc
 *.janet.tested
 *.cache
-!/nixi/runtime/zsh/hey.cache
-nixi/runtime/**/*.a
-nixi/runtime/**/*.so
-nixi/runtime/**/*.dylib
-nixi/vendor/janet/**/*.a
-nixi/vendor/janet/**/*.so
-nixi/vendor/janet/**/*.dylib
-nixi/vendor/janet/.cache/

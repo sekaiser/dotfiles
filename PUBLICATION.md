@@ -7,6 +7,8 @@
   infrastructure identifier, trust key or actual encrypted secret file is present.
 - Evaluate the recipes without any private customization checkout or input.
 - Run an independent credential-pattern scan over both source and fresh history.
+- Review commit author/committer email addresses as well as source contents.
+  A clean file tree does not conceal personal identity in Git metadata.
 - Review access policy before deploying the example account or VM image.
 - Publish Nixi and switch its input to a public transport before expecting
   unauthenticated users to evaluate these recipes.

@@ -9,17 +9,11 @@
 }: {
   config =
     {
-      modules.profiles =
-        {
-          workstation.enable = true;
-          zsh-workstation.enable = true;
-          home-workstation.enable = true;
-        }
-        // lib.optionalAttrs (!(options ? homebrew)) {
-          # Explicit workstation account policy.
-          administrator.enable = true;
-          primary-user.extraGroups = ["users" "docker"];
-        };
+      modules.profiles = {
+        workstation.enable = true;
+        zsh-workstation.enable = true;
+        home-workstation.enable = true;
+      };
       hey.enable = lib.mkDefault true;
       user.packages = [hey.packages.tmuxsel];
       home.stateVersion = "25.05";
@@ -44,21 +38,22 @@
         settings = {
           substituters = ["https://nix-community.cachix.org" "https://cache.nixos.org/"];
           trusted-public-keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
-          trusted-users = ["root" config.user.name];
+          # Additional daemon trust is a private administrator decision.
+          trusted-users = ["root"];
           allowed-users = ["root" config.user.name];
         };
         optimise.automatic = true;
       };
     }
     // lib.optionalAttrs (options ? homebrew) {
-      # Explicit private policy: do not inherit Darwin's unsandboxed default.
+      # Explicitly sandbox Darwin builds too.
       nix.settings.sandbox = true;
       # Workstation choices, not framework defaults. Leave undeclared software alone.
       homebrew = {
         enable = true;
         global.autoUpdate = true;
         onActivation = {
-          # Migration hold: review explicit Brew updates separately after cutover.
+          # Review explicit Brew updates separately; leave undeclared software alone.
           autoUpdate = false;
           upgrade = false;
           cleanup = "none";
