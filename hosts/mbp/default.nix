@@ -3,7 +3,6 @@ _: {
   module = {
     hey,
     lib,
-    pkgs,
     ...
   }: let
     inherit (lib) mkDefault mkForce;
@@ -79,13 +78,7 @@ _: {
           eks.enable = true;
         };
         alacritty.enable = true;
-        atuin = {
-          enable = true;
-          # Keep shell history; the pinned AI session tests fail on Darwin.
-          package = pkgs.unstable.atuin.overrideAttrs (old: {
-            buildFeatures = lib.remove "ai" old.buildFeatures;
-          });
-        };
+        atuin.enable = true;
         direnv.enable = true;
         git = {
           enable = true;
@@ -151,6 +144,10 @@ _: {
 
     # local config
     config = {pkgs, ...}: {
+      # Keep shell history; the pinned AI session tests fail on Darwin.
+      modules.shell.atuin.package = pkgs.unstable.atuin.overrideAttrs (old: {
+        buildFeatures = lib.remove "ai" old.buildFeatures;
+      });
       nix.enable = true;
       nix.optimise.automatic = mkForce false;
       nix.linux-builder = {
