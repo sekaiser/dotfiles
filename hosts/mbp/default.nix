@@ -3,6 +3,7 @@ _: {
   module = {
     hey,
     lib,
+    pkgs,
     ...
   }: let
     inherit (lib) mkDefault mkForce;
@@ -78,7 +79,13 @@ _: {
           eks.enable = true;
         };
         alacritty.enable = true;
-        atuin.enable = true;
+        atuin = {
+          enable = true;
+          # Keep shell history; the pinned AI session tests fail on Darwin.
+          package = pkgs.unstable.atuin.overrideAttrs (old: {
+            buildFeatures = lib.remove "ai" old.buildFeatures;
+          });
+        };
         direnv.enable = true;
         git = {
           enable = true;
