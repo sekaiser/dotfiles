@@ -15,6 +15,11 @@
     nixi.inputs.disko.follows = "disko";
     nixpkgs.url = "nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    # Keep MBP Atuin on its working 18.19 package while newer Darwin tests fail.
+    nixpkgs-atuin = {
+      url = "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1070770.8ce4ef6cb6f8/nixexprs.tar.xz";
+      flake = false;
+    };
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-26.05-darwin";
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";

@@ -276,6 +276,19 @@
         "type": "indirect"
       }
     },
+    "nixpkgs-atuin": {
+      "flake": false,
+      "locked": {
+        "lastModified": 315532800,
+        "narHash": "sha256-q+GdZ3yq4Y2LXHRK0vKTM32Hwy7RCgUgy+hjwZLI5pY=",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1070770.8ce4ef6cb6f8/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1070770.8ce4ef6cb6f8/nixexprs.tar.xz"
+      }
+    },
     "nixpkgs-darwin": {
       "locked": {
         "lastModified": 1793526781,
@@ -316,6 +329,7 @@
         "home-manager": "home-manager",
         "nixi": "nixi",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-atuin": "nixpkgs-atuin",
         "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "sops-nix": "sops-nix"
