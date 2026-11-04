@@ -12,6 +12,8 @@ _: {
         atuin-workstation.enable = true;
         rust-workstation.enable = true;
         go-workstation.enable = true;
+        java-workstation.enable = true;
+        omp-workstation.enable = true;
         vim-workstation.enable = true;
         tmux-workstation.enable = true;
         alacritty-workstation.enable = true;
@@ -73,6 +75,7 @@ _: {
       shell = {
         awscli2 = {
           enable = true;
+          eks.enable = true;
         };
         alacritty.enable = true;
         atuin.enable = true;
