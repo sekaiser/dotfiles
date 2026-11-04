@@ -248,11 +248,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793771256,
-        "narHash": "sha256-6g5pNdeh8+WwO8dX6I+VLrf4GvrOtc+ms3yFLwCUTVQ=",
+        "lastModified": 1793773171,
+        "narHash": "sha256-DqkgKVuLVJxEf+AEwgFRyMIYPscfw4Y8+AUGPQNDdrA=",
         "ref": "refs/heads/main",
-        "rev": "d9c5bda01a8dc7c0e7ebda5f3922ea33b4eff767",
-        "revCount": 14,
+        "rev": "e1594808f01ffe5f36be17e72615ca354a9ce3eb",
+        "revCount": 15,
         "type": "git",
         "url": "https://github.com/sekaiser/nixi.git"
       },

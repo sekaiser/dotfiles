@@ -104,7 +104,11 @@ _: {
         docker.enable = true;
       };
       dev = {
-        rust.enable = true;
+        # The pinned unstable Rust coverage runtime crashes on Apple Silicon.
+        rust = {
+          enable = true;
+          packageSet = "stable";
+        };
         java.openjdk25.enable = true;
         go.enable = true;
       };
