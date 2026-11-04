@@ -254,11 +254,11 @@
         "rev": "db993ab099e87d2ffd55f8633cfb4bef449739c2",
         "revCount": 11,
         "type": "git",
-        "url": "ssh://git@github.com/sekaiser/nixi.git"
+        "url": "https://github.com/sekaiser/nixi.git"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/sekaiser/nixi.git"
+        "url": "https://github.com/sekaiser/nixi.git"
       }
     },
     "nixpkgs": {

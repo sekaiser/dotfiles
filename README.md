@@ -31,9 +31,8 @@ versions. Doom may require evaluation-time helper builds and pinned source
 downloads. Inspect the build plan; dependency revisions are pinned, and global
 security dependency overrides are not enabled.
 
-Nixi and this repository are currently private staging. The Nixi input still
-uses SSH while staging; switch that transport to public HTTPS after Nixi is
-published. Publication requires a separate review and approval.
+The Nixi input uses public HTTPS and is pinned in `flake.lock`. Evaluating these
+recipes does not require access to a private repository or an SSH identity.
 
 ## Private customization
 

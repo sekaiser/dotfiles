@@ -2,9 +2,9 @@
   description = "Shareable MBP and UTM workstation configurations using Nixi";
 
   inputs = {
-    # Private staging remote; keep this revision pinned independently of local edits.
+    # Public source; keep this revision pinned independently of local edits.
     # Development overrides use the nested Nixi checkout without rewriting this lock.
-    nixi.url = "git+ssh://git@github.com/sekaiser/nixi.git";
+    nixi.url = "git+https://github.com/sekaiser/nixi.git";
     nixi.inputs.nixpkgs.follows = "nixpkgs";
     nixi.inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
     nixi.inputs.nixpkgs-darwin.follows = "nixpkgs-darwin";
