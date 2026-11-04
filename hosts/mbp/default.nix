@@ -145,8 +145,12 @@ _: {
     # local config
     config = {pkgs, ...}: {
       # Keep shell history; the pinned AI session tests fail on Darwin.
-      modules.shell.atuin.package = pkgs.unstable.atuin.overrideAttrs (old: {
-        buildFeatures = lib.remove "ai" old.buildFeatures;
+      modules.shell.atuin.package = pkgs.unstable.atuin.overrideAttrs (old: let
+        features = lib.remove "ai" old.buildFeatures;
+      in {
+        buildFeatures = features;
+        cargoBuildFeatures = features;
+        cargoCheckFeatures = features;
       });
       nix.enable = true;
       nix.optimise.automatic = mkForce false;
