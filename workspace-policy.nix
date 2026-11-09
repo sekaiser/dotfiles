@@ -48,6 +48,9 @@
     // lib.optionalAttrs (options ? homebrew) {
       # Explicitly sandbox Darwin builds too.
       nix.settings.sandbox = true;
+      # macOS caps compiled sandbox path lists at 64 KiB. A store-wide rule
+      # keeps large unions buildable, at the cost of undeclared store access.
+      nix.settings.extra-sandbox-paths = ["/nix/store"];
       # Workstation choices, not framework defaults. Leave undeclared software alone.
       homebrew = {
         enable = true;
