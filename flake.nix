@@ -31,6 +31,10 @@
       url = "github:marienz/nix-doom-emacs-unstraightened";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    kokedera-theme = {
+      url = "github:sekaiser/doom-emacs-theme-kokedera";
+      flake = false;
+    };
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";

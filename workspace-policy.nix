@@ -1,6 +1,7 @@
 # Explicit workstation policy, separate from Nixi's generic mechanism.
 {
   hey,
+  self,
   config,
   options,
   lib,
@@ -45,6 +46,12 @@
         optimise.automatic = true;
       };
     }
+    (lib.mkIf config.modules.editors.emacs.enable {
+      modules.editors.emacs.extraConfig = lib.mkBefore ''
+        (add-to-list 'custom-theme-load-path "${self.inputs.kokedera-theme}")
+        (setq doom-theme 'doom-kokedera-summer)
+      '';
+    })
     (lib.optionalAttrs (options ? homebrew) {
       # Explicitly sandbox Darwin builds too.
       nix.settings.sandbox = true;

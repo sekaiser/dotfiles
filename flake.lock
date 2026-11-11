@@ -220,6 +220,22 @@
         "type": "github"
       }
     },
+    "kokedera-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794405702,
+        "narHash": "sha256-qiIJNPYPvzFotXgEwPbb2DJIsk84agYTeRe0aNSeHR0=",
+        "owner": "sekaiser",
+        "repo": "doom-emacs-theme-kokedera",
+        "rev": "6c18a32ab6dea9ffd7f8f0cb8a67ab31c663f836",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sekaiser",
+        "repo": "doom-emacs-theme-kokedera",
+        "type": "github"
+      }
+    },
     "nixi": {
       "inputs": {
         "alejandra": [
@@ -327,6 +343,7 @@
         "disko": "disko",
         "doom-emacs": "doom-emacs",
         "home-manager": "home-manager",
+        "kokedera-theme": "kokedera-theme",
         "nixi": "nixi",
         "nixpkgs": "nixpkgs",
         "nixpkgs-atuin": "nixpkgs-atuin",
