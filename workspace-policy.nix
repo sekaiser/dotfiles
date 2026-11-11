@@ -7,7 +7,7 @@
   pkgs,
   ...
 }: {
-  config =
+  config = lib.mkMerge [
     {
       modules.profiles = {
         workstation.enable = true;
@@ -29,13 +29,13 @@
         extraOptions = ''
           warn-dirty = false
           http2 = true
-          experimental-features = nix-command flakes
         '';
         nixPath =
           lib.mapAttrsToList (name: input: "${name}=${input}")
           (lib.filterAttrs (_: input: input ? outputs) hey.inputs)
           ++ ["dotfiles=${hey.dir}"];
         settings = {
+          experimental-features = ["nix-command" "flakes"];
           substituters = ["https://nix-community.cachix.org" "https://cache.nixos.org/"];
           trusted-public-keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
           # Additional daemon trust is a private administrator decision.
@@ -45,7 +45,7 @@
         optimise.automatic = true;
       };
     }
-    // lib.optionalAttrs (options ? homebrew) {
+    (lib.optionalAttrs (options ? homebrew) {
       # Explicitly sandbox Darwin builds too.
       nix.settings.sandbox = true;
       # macOS caps compiled sandbox path lists at 64 KiB. A store-wide rule
@@ -63,5 +63,6 @@
         };
       };
       fonts.packages = lib.filter lib.isDerivation (lib.attrValues pkgs.nerd-fonts);
-    };
+    })
+  ];
 }

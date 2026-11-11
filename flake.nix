@@ -48,6 +48,7 @@
   in
     lib.mkHostFlake {
       inherit inputs devShells overlays packages;
+      checks.workspace-policy = import ./checks/workspace-policy.nix;
       systems = ["aarch64-darwin" "aarch64-linux" "x86_64-linux"];
 
       hosts = lib.mapHosts ./hosts;
