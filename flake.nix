@@ -32,7 +32,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     kokedera-theme = {
-      url = "github:sekaiser/doom-emacs-theme-kokedera";
+      url = "github:cappuccinotogo/kokedera-theme-extension-emacs";
       flake = false;
     };
 

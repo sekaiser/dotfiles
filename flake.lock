@@ -223,16 +223,16 @@
     "kokedera-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1794405702,
-        "narHash": "sha256-qiIJNPYPvzFotXgEwPbb2DJIsk84agYTeRe0aNSeHR0=",
-        "owner": "sekaiser",
-        "repo": "doom-emacs-theme-kokedera",
-        "rev": "6c18a32ab6dea9ffd7f8f0cb8a67ab31c663f836",
+        "lastModified": 1789299852,
+        "narHash": "sha256-x0/3Ro/fFWttAohFx6yoTICAW2XNF9ZRnGDdpz8WUEU=",
+        "owner": "cappuccinotogo",
+        "repo": "kokedera-theme-extension-emacs",
+        "rev": "adbbd1f40aae2e930aa42803394cf08b0e6b87b2",
         "type": "github"
       },
       "original": {
-        "owner": "sekaiser",
-        "repo": "doom-emacs-theme-kokedera",
+        "owner": "cappuccinotogo",
+        "repo": "kokedera-theme-extension-emacs",
         "type": "github"
       }
     },

@@ -49,7 +49,7 @@
     (lib.mkIf config.modules.editors.emacs.enable {
       modules.editors.emacs.extraConfig = lib.mkBefore ''
         (add-to-list 'custom-theme-load-path "${self.inputs.kokedera-theme}")
-        (setq doom-theme 'doom-kokedera-summer)
+        (setq doom-theme 'kokedera-summer)
       '';
     })
     (lib.optionalAttrs (options ? homebrew) {
