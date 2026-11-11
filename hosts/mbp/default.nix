@@ -54,6 +54,7 @@ _: {
             "notion"
             "vlc"
             "zed"
+            "zen"
           ];
           brews = [
             "yt-dlp"
