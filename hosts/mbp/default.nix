@@ -55,6 +55,7 @@ _: {
             "vlc"
             "zed"
             "zen"
+            "excalidrawz"
           ];
           brews = [
             "yt-dlp"
